@@ -4,7 +4,7 @@ dataset?"""
 
 #FUNÇÃO PARA CALCULAR A MEDIA PIB PER CAPITA DA CIDADE DE MANAUS
 
-def calcPib():
+def pinPerCapita():
     lista = []
 
     with open('./dataset/pib_municipio_2010_a_2018.txt' , 'r' , encoding='utf-8') as data :
@@ -28,20 +28,19 @@ def calcPib():
     for i in range(len(lista)):
         for x in range(len(lista[1])):
             if x >= 13:
-                if lista[i][3] =='Manaus':
+                if lista[i][3] == 'Manaus':
                     value = float(lista[i][x])
                     pib += value
-                
-  
-    print(f'{pib:.2f}' )
-    readTxt(pib)
+
+    mediapib = pib /len(lista)
+    print(f'{mediapib:.2f}' )
+    readTxt(mediapib)
     
 def readTxt(pib):
     saida = open('./questao1/saida.txt' ,'w')
 
-    saida.write(f'PIB PER CAPITAL DA CIDADE DE MANAUS\n')
+    saida.write(f'MÉDIA PIB PER CAPITAL DA CIDADE DE MANAUS\n')
     saida.write('\n')
     saida.write(f'ENTRE OS ANOS 2010 E 2018\n')
     saida.write('\n')
     saida.write(f'R$: {pib:.2f}')
-
