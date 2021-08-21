@@ -20,24 +20,24 @@ def porporcao():
 
                     txt =  textfinal.split(";")
                     lista.append(txt)
-    cont = 0
-    cont2 = 0
+    valor1 = 0
+    valor2 = 0
     for i in range(len(lista)):
         for x in range(len(lista[1])):
             if x == 9:
-                cont    = int(lista[i][x])
+                valor1    = int(lista[i][x])
                         
             elif x == 11:
                 
-                cont2    = int(lista[i][x])
+                valor2    = int(lista[i][x])
     total = 0
-    if cont > cont2:
-        total = (cont - cont2)*100/cont
+    if valor1 > valor2:
+        total = (valor1 - valor2)*100/valor1
     else:
-        total = (cont2 - cont)*100/cont
+        total = (valor2 - valor1)*100/valor1
     saida.write("VALOR DA PROPORÇÃO ENTRE \n")
     saida.write('\n')
-    saida.write(f'{cont} E {cont2} É IGUAL\n')
+    saida.write(f'{valor1} E {valor2} É IGUAL\n')
     saida.write('\n')
     str(total)
     saida.write(f'{total:.2f}%')
